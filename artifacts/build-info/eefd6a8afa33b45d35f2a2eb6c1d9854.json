@@ -1,0 +1,397 @@
+{
+	"id": "eefd6a8afa33b45d35f2a2eb6c1d9854",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"voting_smart_contract_sol.sol": {
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity >= 0.7.0 <0.9.0;\r\n\r\n/*\r\nAnyone can submit a proposal\r\n- a proposal only contains an id (why?)\r\n\r\nThe owner of the smart contract can give Voting rights\r\n- How will we identify users?\r\n\r\nUsers with voting rights can vote on the proposal\r\nContains a function that calculates the winner \r\n\r\nremember: mappings cannot be iterated, think how you need the data\r\nbonus: have a deadline --> how to define this? \r\n*/\r\n\r\ncontract Voting{\r\n\r\n    \r\n\r\n    //map van proposal id naar aantal stemmen\r\n    mapping(uint => uint ) proposals; \r\n\r\n\r\n\r\n\r\n\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"voting_smart_contract_sol.sol": {
+				"Voting": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"voting_smart_contract_sol.sol\":460:586  contract Voting{\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"voting_smart_contract_sol.sol\":460:586  contract Voting{\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa2646970667358221220ace1557dc25ef6b3443623f684a82fb7575aae5d51051c114a8e128e4640a78c64736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220ace1557dc25ef6b3443623f684a82fb7575aae5d51051c114a8e128e4640a78c64736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xAC 0xE1 SSTORE PUSH30 0xC25EF6B3443623F684A82FB7575AAE5D51051C114A8E128E4640A78C6473 PUSH16 0x6C634300080700330000000000000000 ",
+							"sourceMap": "460:126:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea2646970667358221220ace1557dc25ef6b3443623f684a82fb7575aae5d51051c114a8e128e4640a78c64736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xAC 0xE1 SSTORE PUSH30 0xC25EF6B3443623F684A82FB7575AAE5D51051C114A8E128E4640A78C6473 PUSH16 0x6C634300080700330000000000000000 ",
+							"sourceMap": "460:126:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 460,
+									"end": 586,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a2646970667358221220ace1557dc25ef6b3443623f684a82fb7575aae5d51051c114a8e128e4640a78c64736f6c63430008070033",
+									".code": [
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 460,
+											"end": 586,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"voting_smart_contract_sol.sol\":\"Voting\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"voting_smart_contract_sol.sol\":{\"keccak256\":\"0xbd5bce8963f67dd7ca272833d7f042b00dba7342313b4725be5cbafb287d898d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c1f537e9bd3a05624e14106e394dd0c1daaae56bac5f3deb1e68d9cb6249d7d\",\"dweb:/ipfs/QmTU2Grti8Xq7g76y42iVonjEHGK5pEA4JVwCtKKwZ3uXv\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [
+							{
+								"astId": 5,
+								"contract": "voting_smart_contract_sol.sol:Voting",
+								"label": "proposals",
+								"offset": 0,
+								"slot": "0",
+								"type": "t_mapping(t_uint256,t_uint256)"
+							}
+						],
+						"types": {
+							"t_mapping(t_uint256,t_uint256)": {
+								"encoding": "mapping",
+								"key": "t_uint256",
+								"label": "mapping(uint256 => uint256)",
+								"numberOfBytes": "32",
+								"value": "t_uint256"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
+							}
+						}
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"voting_smart_contract_sol.sol": {
+				"ast": {
+					"absolutePath": "voting_smart_contract_sol.sol",
+					"exportedSymbols": {
+						"Voting": [
+							6
+						]
+					},
+					"id": 7,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:32:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 6,
+							"linearizedBaseContracts": [
+								6
+							],
+							"name": "Voting",
+							"nameLocation": "469:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"constant": false,
+									"id": 5,
+									"mutability": "mutable",
+									"name": "proposals",
+									"nameLocation": "562:9:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 6,
+									"src": "539:32:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+										"typeString": "mapping(uint256 => uint256)"
+									},
+									"typeName": {
+										"id": 4,
+										"keyType": {
+											"id": 2,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "547:4:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "539:22:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+											"typeString": "mapping(uint256 => uint256)"
+										},
+										"valueType": {
+											"id": 3,
+											"name": "uint",
+											"nodeType": "ElementaryTypeName",
+											"src": "555:4:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"scope": 7,
+							"src": "460:126:0",
+							"usedErrors": []
+						}
+					],
+					"src": "33:553:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
